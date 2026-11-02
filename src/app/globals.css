@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Royal Blue and Light Cream Luxury Fintech Palette */
+  --bg-page: #FAF7F2;
+  --bg-page-subtle: #F5F1E8;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F0EAE1;
+  --bg-muted: #E8E1D5;
+  
+  --text-primary: #0C1E38;
+  --text-secondary: #4A5B73;
+  --text-tertiary: #7D8CA3;
+
+  --brand-royal: #0F52BA;
+  --brand-blue: #136FC6;
+  --brand-navy: #0A2240;
+  --brand-cyan: #0284C7;
+  --brand-sky: #0EA5E9;
+  --brand-success: #10B981;
+  --brand-warning: #F59E0B;
+  --brand-danger: #EF4444;
+
+  --border-light: #E5DEC9;
+  --border-subtle: #EDE7DC;
+
+  color-scheme: light;
+}
+
+/* Enforce Light Cream Canvas & Deep Royal Ink */
+html, body {
+  background-color: #FAF7F2;
+  color: #0C1E38;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.025em;
+  color: #0C1E38;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar for Warm Cream Surfaces */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F1E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D1C1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #136FC6;
+}
+
+/* Glassmorphism & 3D Glass Surface Effects */
+.glass-cream {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 222, 201, 0.8);
+}
+
+.glass-royal {
+  background: linear-gradient(135deg, rgba(19, 111, 198, 0.95), rgba(10, 34, 64, 0.95));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 3D Glass AI Button Styles (inspired by threeui.com/buttons/glass-ai-button) */
+.glass-ai-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #1C7ED6 0%, #136FC6 45%, #0B4887 100%);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.4) inset,
+    0 -1px 2px rgba(0, 0, 0, 0.2) inset,
+    0 8px 20px -4px rgba(19, 111, 198, 0.35),
+    0 2px 6px rgba(11, 72, 135, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.glass-ai-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: transform 0.75s ease;
+  pointer-events: none;
+}
+
+.glass-ai-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.6) inset,
+    0 -1px 2px rgba(0, 0, 0, 0.2) inset,
+    0 14px 28px -6px rgba(19, 111, 198, 0.45),
+    0 4px 10px rgba(11, 72, 135, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.glass-ai-btn:hover::before {
+  transform: skewX(-20deg) translateX(100%);
+}
+
+.glass-ai-btn:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.2) inset,
+    0 4px 12px -2px rgba(19, 111, 198, 0.3);
+}
+
+/* Glass AI Button - Cream Inverted Variant */
+.glass-ai-btn-cream {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #0C1E38;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.8) inset,
+    0 6px 16px -3px rgba(12, 30, 56, 0.08),
+    0 2px 4px rgba(12, 30, 56, 0.04);
+  border: 1px solid #E5DEC9;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.glass-ai-btn-cream:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #FFFFFF;
+  border-color: #136FC6;
+  color: #136FC6;
+  box-shadow: 
+    0 1px 2px rgba(255, 255, 255, 1) inset,
+    0 12px 24px -5px rgba(19, 111, 198, 0.15),
+    0 4px 8px rgba(12, 30, 56, 0.06);
+}
+
+/* 3D Card Hover Depth */
+.card-3d-depth {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d-depth:hover {
+  transform: translateY(-4px) perspective(1000px) rotateX(1deg) rotateY(-1deg);
+  box-shadow: 0 20px 35px -10px rgba(12, 30, 56, 0.1), 0 8px 12px -5px rgba(12, 30, 56, 0.05);
+}
+
+/* Gentle Hero Float Animation */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.animate-hero-float {
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+/* Animated Blue Circuit Connection Lines */
+@keyframes connectionDash {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.animate-circuit-flow {
+  stroke-dasharray: 6 6;
+  animation: connectionDash 3s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}

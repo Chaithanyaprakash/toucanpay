@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing, Scratch and Temporary Archives
+scratch/
+scratch_*
+gemini_share_content.html
+share_chunk.js
+*.zip
+*.zip.tmp
+*.log
+
+# Next.js build output
+.next/
+out/
+
+# Production
+build/
+
+# Misc
+.DS_Store
+*.pem
+
+# Local env files
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
